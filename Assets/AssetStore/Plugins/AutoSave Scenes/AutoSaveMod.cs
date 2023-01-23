@@ -1,10 +1,11 @@
-﻿using System;
+﻿#if UNITY_EDITOR
+using System;
 using System.Linq;
 using UnityEngine;
 using UnityEditor;
 using UnityEditor.SceneManagement;
-using System.IO;
 using UnityEditorInternal;
+using System.IO;
 using UnityEngine.UIElements;
 using System.Reflection;
 using System.Collections.Generic;
@@ -474,6 +475,7 @@ namespace EM.AutoSave.Editor
 
     }
 
+#if UNITY_EDITOR
     [CustomEditor(typeof(AutoSaveMod))]
     class SETGUI_Autosave : UnityEditor.Editor
     {
@@ -583,7 +585,7 @@ namespace EM.AutoSave.Editor
             return true;
         }
     }
-
+#endif
 
 
 
@@ -909,3 +911,4 @@ namespace EM.AutoSave.Editor
 
 
 }
+#endif

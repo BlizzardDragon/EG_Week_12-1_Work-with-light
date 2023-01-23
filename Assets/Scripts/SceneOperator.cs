@@ -8,6 +8,7 @@ public class SceneOperator : MonoBehaviour
 {
     public static SceneOperator Instance;
     [SerializeField] Text _epilepsy;
+    [SerializeField] private CameraController _cameraController;
     float _timer;
 
     void Awake()
@@ -26,7 +27,7 @@ public class SceneOperator : MonoBehaviour
 
     void Update()
     {
-        if (Input.anyKey)
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             if (SceneManager.sceneCountInBuildSettings - 1 == SceneManager.GetActiveScene().buildIndex)
             {
